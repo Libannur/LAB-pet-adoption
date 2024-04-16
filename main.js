@@ -13,7 +13,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
       type: "dino",
-      imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg",
+      imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRqFDKl11S4ynTE-mazz967hnDZG2NRx5hLRZ6Puc7sOWiFHRLUUfq-lzalntPTXMI9R8",
     },
     {
       id: 3,
@@ -240,3 +240,21 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+  const targetingApp = document.querySelector('#pet')
+
+  let domString = ""
+  pets.forEach(pet => {
+    domString+= `
+  <div class="card" style="width: 18rem; display: flex; margin: 10px">
+    <img src="${pet.imageUrl}" class="card-img-top" alt="${pet.name}">
+    <div class="card-body">
+      <h5 class="card-title">${pet.name}</h5>
+      <p class="card-text">${pet.specialSkill}</p>
+      <a href="#" class="btn btn-success">Cat</a>
+
+    </div>
+  </div>`;
+  });
+targetingApp.innerHTML = domString;
+console.log('testing');
