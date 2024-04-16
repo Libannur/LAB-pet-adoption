@@ -1,5 +1,12 @@
-div {
+body{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+div  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }

@@ -242,19 +242,29 @@ const pets = [
   ];
 
   const targetingApp = document.querySelector('#pet')
+  let header = document.querySelector("head")
 
   let domString = ""
   pets.forEach(pet => {
     domString+= `
   <div class="card" style="width: 18rem; display: flex; margin: 10px">
-    <img src="${pet.imageUrl}" class="card-img-top" alt="${pet.name}">
-    <div class="card-body">
+  <img src="${pet.imageUrl}" class="card-img-top" alt="${pet.name}">
+  <div class="card-body style="dispalyz: flex;">
       <h5 class="card-title">${pet.name}</h5>
       <p class="card-text">${pet.specialSkill}</p>
       <a href="#" class="btn btn-success">Cat</a>
-
     </div>
   </div>`;
   });
 targetingApp.innerHTML = domString;
-console.log('testing');
+
+
+header.innerHTML += `
+  <style>
+  .card {
+    display: flex;
+    flex-direct
+    background-color: red;
+  }
+  </style>
+`
