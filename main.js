@@ -243,7 +243,10 @@ const pets = [
 
   const targetingApp = document.querySelector('#pet')
   let header = document.querySelector("head")
-
+  const catBtn = document.getElementById("cat");
+  const dogBtn = document.getElementById("dog");
+  const dinoBtn = document.getElementById("dino");
+  
   let domString = ""
   pets.forEach(pet => {
     domString+= `
@@ -266,7 +269,27 @@ header.innerHTML += `
   .card {
     display: flex;
     flex-direct
-    background-color: red;
   }
   </style>
 `
+
+// Render to DOM function
+
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+};
+
+
+catBtn.addEventListener("click", (pet) => {
+  alert("shows cats")
+})
+
+
+dogBtn.addEventListener("click", () => {
+  alert("show dogs")
+})
+
+dinoBtn.addEventListener("click", () => {
+  alert("show dino")
+})
