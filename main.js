@@ -259,6 +259,8 @@ const pets = [
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
+      <button class="btn btn-info">${pet.type}</button>
+      <button class="btn btn-danger">Delete</button>
     </div>
   </div>`;
   });
@@ -278,21 +280,21 @@ header.innerHTML += `
 
 
 const showAllCats = () => {
-
-  domString = "";
-
+  domString = ''
   pets.forEach((pet) => {
     if (pet.type === "cat") {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <button class="btn btn-primary pet-cat">${pet.type}</button>
-    <button class="btn btn-danger pet-cat">Delete</button>
-  </div>
-</div>`
+    domString += `<div class="card" style="width: 18rem; display: flex; margin: 10px">
+    <div class-header>
+    <h3 class="card-title">${pet.name}</h3>
+    </div>
+    <img src="${pet.imageUrl}" class="card-img-top" alt="${pet.name}">
+    <div class="card-body">
+      <p class="card-text">${pet.color}</p>
+      <p class="card-text">${pet.specialSkill}</p>
+      <button class="btn btn-primary">${pet.type}</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>`;
     }
     targetingApp.innerHTML = domString;
   });
@@ -304,16 +306,18 @@ const showAllDogs = () => {
 
   pets.forEach((pet) => {
     if (pet.type === "dog") {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <button class="btn btn-primary pet-cat">${pet.type}</button>
-    <button class="btn btn-danger pet-cat">Delete</button>
-  </div>
-</div>`
+    domString += ` <div class="card" style="width: 18rem; display: flex; margin: 10px">
+    <div class-header>
+    <h3 class="card-title">${pet.name}</h3>
+    </div>
+    <img src="${pet.imageUrl}" class="card-img-top" alt="${pet.name}">
+    <div class="card-body">
+      <p class="card-text">${pet.color}</p>
+      <p class="card-text">${pet.specialSkill}</p>
+      <button class="btn btn-warning">${pet.type}</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>`;
     }
     targetingApp.innerHTML = domString;
   });
@@ -325,16 +329,18 @@ const showAllDino = () => {
 
   pets.forEach((pet) => {
     if (pet.type === "dino") {
-    domString += `<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-    <h6>${pet.color}</h6>
-    <p class="card-text description">${pet.specialSkill}</p>
-    <button class="btn btn-primary pet-cat">${pet.type}</button>
-    <button class="btn btn-danger pet-cat">Delete</button>
-  </div>
-</div>`
+    domString += `<div class="card" style="width: 18rem; display: flex; margin: 10px">
+    <div class-header>
+    <h3 class="card-title">${pet.name}</h3>
+    </div>
+    <img src="${pet.imageUrl}" class="card-img-top" alt="${pet.name}">
+    <div class="card-body">
+      <p class="card-text">${pet.color}</p>
+      <p class="card-text">${pet.specialSkill}</p>
+      <button class="btn btn-secondary">${pet.type}</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>`;
     }
     targetingApp.innerHTML = domString;
   });
@@ -353,9 +359,9 @@ const showAll = () => {
       <p class="card-text">${pet.specialSkill}</p>
     </div>
   </div>`;
-  });
-}
+});
 targetingApp.innerHTML = domString
+}
 
 
 
