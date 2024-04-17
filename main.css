@@ -4,9 +4,15 @@ body{
     flex-wrap: wrap;
     align-items: center;
 }
-div  {
+.card-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+img {
+    height: 190.66px;
 }
