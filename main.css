@@ -14,7 +14,7 @@ body{
     align-content: flex-start;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 50px;
+    padding: 80px;
 
 }
 
@@ -28,6 +28,9 @@ img {
     text-align: center;
     color: blanchedalmond;
     font-weight: bolder;
+}
+.btn-container h1 {
+    padding-top: 15px;
 }
 #pet {
     margin: 60px;
