@@ -3,7 +3,9 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-
+    background-image: url("https://images.pexels.com/photos/414562/pexels-photo-414562.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card-container {
     display: flex;
@@ -23,7 +25,9 @@ img {
     display: flex;
     margin: 20px;
     top: 15px;
-    
+    text-align: center;
+    color: blanchedalmond;
+    font-weight: bolder;
 }
 #pet {
     margin: 60px;
@@ -43,3 +47,14 @@ button{
   .container  {
     display: flex;  
 }
+.card {
+    border-radius: 20px;
+    background-image: url("https://images.pexels.com/photos/459037/pexels-photo-459037.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    
+}
+.card-title {
+    text-align: center;
+    background-color: beige;
+}
+
