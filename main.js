@@ -247,6 +247,7 @@ const pets = [
   const dogBtn = document.getElementById("dog");
   const dinoBtn = document.getElementById("dino");
   const allBtn = document.getElementById("all");
+  const deleteBtn = document.getElementById("delete")
   
   let domString = ""
   pets.forEach(pet => {
@@ -260,7 +261,7 @@ const pets = [
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
       <button class="btn btn-info">${pet.type}</button>
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" id="delte">Delete</button>
     </div>
   </div>`;
   });
@@ -269,10 +270,7 @@ targetingApp.innerHTML = domString;
 
 header.innerHTML += `
   <style>
-  .card {
-    display: flex;
-    flex-direct
-  }
+  
   </style>
 `
 
@@ -297,6 +295,7 @@ const showAllCats = () => {
   </div>`;
     }
     targetingApp.innerHTML = domString;
+    
   });
 
 }
@@ -347,6 +346,7 @@ const showAllDino = () => {
 
 }
 const showAll = () => {
+  domString = ""
   pets.forEach(pet => {
     domString+= `
   <div class="card" style="width: 18rem; display: flex; margin: 10px">
@@ -357,9 +357,11 @@ const showAll = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
+      <button class="btn btn-info">${pet.type}</button>
+      <button class="btn btn-danger">Delete</button>
     </div>
   </div>`;
-});
+})
 targetingApp.innerHTML = domString
 }
 
@@ -367,9 +369,6 @@ targetingApp.innerHTML = domString
 
 
 catBtn.addEventListener("click", showAllCats)
-
-
 dogBtn.addEventListener("click", showAllDogs)
-
 dinoBtn.addEventListener("click", showAllDino)
 allBtn.addEventListener("click", showAll)
