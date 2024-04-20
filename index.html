@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE htm<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +22,35 @@
         <div class="card-container" id="pet">
             
         </div>
-    </div>
-<script src="main.js"></script>
+            <form>
+                <div class="mb-3">
+                    <label for="petName" class="form-label">Pet Name</label>
+                    <input type="text" class="form-control" id="petName" aria-describedby="emailHelp">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="type" class="form-label"> Pet Type</label>
+                    <input type="text" class="form-control" id="type">
+                </div>
+                <div class="mb-3">
+                    <label for="color" class="form-label">Pet Color</label>
+                    <input type="text" class="form-control" id="color">
+                </div>
+
+                <div class="mb-3">
+                    <label for="skills" class="form-label">pet Specail Skill</label>
+                    <input type="text" class="form-control" id="skills">
+                </div>
+
+                <div class="mb-3">
+                    <label for="img" class="form-label"> Image</label>
+                    <input type="text" class="form-control" id="img">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-success">Add Pet</button>
+            </form>
+        </div>
+        <script src="main.js"></script>
 </body>
 </html>
