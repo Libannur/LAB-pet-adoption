@@ -289,8 +289,7 @@ const showAllCats = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-primary">${pet.type}</button>
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" id="delete">Delete</button>
     </div>
   </div>`;
     }
@@ -363,12 +362,44 @@ const showAll = () => {
   </div>`;
 })
 targetingApp.innerHTML = domString
+
+}
+// select the form from the Dom
+const form = document.querySelector("form")
+
+// create new function that grabs all the value, pushes the new object to the array
+
+const createPet = (e) => {
+  domString = ""
+  e.preventDefault();
+  const newPet =  {
+    id: pets.length + 1,
+    name: document.getElementById("petName").value,
+    type: document.getElementById("type").value,
+    color: document.getElementById("color").value,
+    specialSkill: document.getElementById("skills").value,
+    imageUrl: document.getElementById("img").value
+  }
+  pets.push(newPet)
+  domString = ""
+  targetingApp.innerHTML += domString
+  form.reset()
 }
 
-
-
+// deleteBtn.addEventListener("click", (e) => {
+//   if (e.target.id.includes("delete")) {
+//     const [, id] = e.target.id.split("--");
+//     console.log("id", id);
+//     const index = pets.findIndex((pet) => pet.id === Number.id);
+//     console.log("index", index);
+//     pets.slice(index, 1);
+//     domString = ""
+//     targetingApp.innerHTML = domString;
+//   }
+// })
 
 catBtn.addEventListener("click", showAllCats)
 dogBtn.addEventListener("click", showAllDogs)
 dinoBtn.addEventListener("click", showAllDino)
 allBtn.addEventListener("click", showAll)
+form.addEventListener("submit", createPet)
