@@ -1,12 +1,11 @@
 body{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+    
+    /* background-color: aquamarine; */
     background-image: url("https://images.pexels.com/photos/414562/pexels-photo-414562.jpeg?auto=compress&cs=tinysrgb&w=600");
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .card-container {
     display: flex;
     flex-direction: row;
@@ -31,6 +30,7 @@ img {
 }
 .btn-container h1 {
     padding-top: 15px;
+    color: black;
     
 }
 #pet {
@@ -48,9 +48,7 @@ button{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  .container  {
-    display: flex;  
-}
+ 
 .card {
     border-radius: 20px;
     background-image: url("https://images.pexels.com/photos/459037/pexels-photo-459037.jpeg?auto=compress&cs=tinysrgb&w=600");
@@ -61,4 +59,5 @@ button{
     text-align: center;
     background-color: beige;
 }
+
 
