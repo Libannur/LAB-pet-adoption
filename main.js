@@ -260,7 +260,6 @@ const pets = [
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-info">${pet.type}</button>
       <button class="btn btn-danger" id="delte">Delete</button>
     </div>
   </div>`;
