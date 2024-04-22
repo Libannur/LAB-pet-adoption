@@ -247,7 +247,6 @@ const pets = [
   const dogBtn = document.getElementById("dog");
   const dinoBtn = document.getElementById("dino");
   const allBtn = document.getElementById("all");
-  const deleteBtn = document.getElementById("delete")
   
   let domString = ""
   pets.forEach(pet => {
@@ -260,7 +259,7 @@ const pets = [
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-danger" id="delte">Delete</button>
+      <button class="btn btn-danger" id="delete">Delete</button>
     </div>
   </div>`;
   });
@@ -311,8 +310,7 @@ const showAllDogs = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-warning">${pet.type}</button>
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" id="delete">Delete</button>
     </div>
   </div>`;
     }
@@ -334,13 +332,12 @@ const showAllDino = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-secondary">${pet.type}</button>
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" id="delete">Delete</button>
     </div>
   </div>`;
     }
-    targetingApp.innerHTML = domString;
   });
+  targetingApp.innerHTML = domString;
 
 }
 const showAll = () => {
@@ -355,14 +352,20 @@ const showAll = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-info">${pet.type}</button>
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" id="delete">Delete</button>
     </div>
   </div>`;
 })
 targetingApp.innerHTML = domString
 
 }
+
+catBtn.addEventListener("click", showAllCats)
+dogBtn.addEventListener("click", showAllDogs)
+dinoBtn.addEventListener("click", showAllDino)
+allBtn.addEventListener("click", showAll)
+
+
 // select the form from the Dom
 const form = document.querySelector("form")
 
@@ -384,21 +387,18 @@ const createPet = (e) => {
   targetingApp.innerHTML += domString
   form.reset()
 }
-
-// deleteBtn.addEventListener("click", (e) => {
-//   if (e.target.id.includes("delete")) {
-//     const [, id] = e.target.id.split("--");
-//     console.log("id", id);
-//     const index = pets.findIndex((pet) => pet.id === Number.id);
-//     console.log("index", index);
-//     pets.slice(index, 1);
-//     domString = ""
-//     targetingApp.innerHTML = domString;
-//   }
-// })
-
-catBtn.addEventListener("click", showAllCats)
-dogBtn.addEventListener("click", showAllDogs)
-dinoBtn.addEventListener("click", showAllDino)
-allBtn.addEventListener("click", showAll)
 form.addEventListener("submit", createPet)
+
+
+
+targetingApp.addEventListener("click", (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
+    console.log("id", id);
+    const index = pets.findIndex((pet) => pet.id === Number(id));
+    console.log("index", index);
+    pets.splice(index, 1);
+    domString = " ";
+    targetingApp.innerHTML += domString;
+  }
+})
