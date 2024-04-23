@@ -383,8 +383,7 @@ const createPet = (e) => {
     imageUrl: document.getElementById("img").value
   }
   pets.push(newPet)
-  domString = ""
-  targetingApp.innerHTML += domString
+  showAll()
   form.reset()
 }
 form.addEventListener("submit", createPet)
