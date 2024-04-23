@@ -259,7 +259,7 @@ const pets = [
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-danger" id="delete">Delete</button>
+      <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
     </div>
   </div>`;
   });
@@ -287,7 +287,7 @@ const showAllCats = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-danger" id="delete">Delete</button>
+      <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
     </div>
   </div>`;
     }
@@ -310,7 +310,7 @@ const showAllDogs = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-danger" id="delete">Delete</button>
+      <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
     </div>
   </div>`;
     }
@@ -332,7 +332,7 @@ const showAllDino = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-danger" id="delete">Delete</button>
+      <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
     </div>
   </div>`;
     }
@@ -352,7 +352,7 @@ const showAll = () => {
     <div class="card-body">
       <p class="card-text">${pet.color}</p>
       <p class="card-text">${pet.specialSkill}</p>
-      <button class="btn btn-danger" id="delete">Delete</button>
+      <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
     </div>
   </div>`;
 })
@@ -398,7 +398,8 @@ targetingApp.addEventListener("click", (e) => {
     const index = pets.findIndex((pet) => pet.id === Number(id));
     console.log("index", index);
     pets.splice(index, 1);
-    domString = " ";
-    targetingApp.innerHTML += domString;
+    console.log("pets", pets);
+    // alert("is working")
   }
+  showAll()
 })
